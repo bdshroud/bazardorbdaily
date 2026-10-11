@@ -11,7 +11,7 @@ const hind = Hind_Siliguri({
   variable: "--font-hind",
 });
 export const metadata: Metadata = {
-  metadataBase: new URL("https://bazardors.vercel.app"),
+  metadataBase: new URL("https://bazardorbdaily.vercel.app"),
   applicationName: "বাজার দর",
   title: {
     default: "বাজার দর | নিত্যপণ্যের আজকের বাজারদর",
@@ -26,8 +26,8 @@ export const metadata: Metadata = {
     "বাংলাদেশ বাজার মূল্য",
     "Bazar Dor",
   ],
-  authors: [{ name: "Kamrul Hossain" }],
-  creator: "Kamrul Hossain",
+  authors: [{ name: "Mohammad Yasin" }],
+  creator: "Mohammad Yasin",
   publisher: "বাজার দর",
   alternates: { canonical: "/" },
   openGraph: {
