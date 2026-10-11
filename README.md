@@ -1,32 +1,32 @@
-# BazarDorDaily
+# 🛒 বাজার দর | BazarDor
 
-My BazarDorDaily project is a responsive web application for checking the daily prices of essential products in Bangladesh. It helps users browse products, compare price changes, and view prices from different markets.
+**BazarDor** is a responsive web application that helps people in Bangladesh check daily prices of essential products, compare market prices, and explore price changes to make informed shopping decisions.
 
-## My Live Project
+## 🌐 Live Demo
 
-I deployed the production website on Vercel.
+- **Live Website:** https://bazardorbdaily.vercel.app
+- **GitHub Repository:** https://github.com/bdshroud/bazardordaily
 
-- Live site: https://bazardorbdaily.vercel.app
-- GitHub repository: https://github.com/bdshroud/bazardorbdaily
+## ✨ Key Features
 
-### Live Authentication Setup
+1. **📊 Daily Price Updates** — Explore daily product prices, including price increases and decreases.
+2. **🔎 Product Browsing & Filtering** — Browse products, filter by category, and sort by price.
+3. **📈 Market Price Comparison** — View minimum, maximum, average, and market-based prices where available.
+4. **📱 Responsive Design** — Enjoy a user-friendly experience across desktop, tablet, and mobile devices.
+5. **🔐 Secure User Authentication** — Register and sign in using email/password, Google, or GitHub, with profile management.
 
-The production environment variables are stored securely in Vercel. The production base URL is:
+## 🛠️ Technologies Used
 
-```text
-BETTER_AUTH_URL=https://bazardorbdaily.vercel.app/
-```
+- **Framework:** Next.js 16
+- **Frontend:** React 19, TypeScript
+- **Styling:** Tailwind CSS
+- **Authentication:** Better Auth
+- **Database:** MongoDB
+- **Notifications:** React Hot Toast
+- **Icons:** Lucide React
+- **Deployment:** Vercel
 
-Production OAuth callback URLs:
-
-```text
-Google: https://bazardorbdaily.vercel.app/api/auth/callback/google
-GitHub: https://bazardorbdaily.vercel.app/api/auth/callback/github
-```
-
-These callback URLs must also be added to Google Cloud Console and GitHub Developer Settings.
-
-## Local Development
+## 🚀 Getting Started
 
 ### 1. Clone the repository
 
@@ -41,15 +41,9 @@ cd bazardordaily
 npm install
 ```
 
-### 3. Create the environment file
+### 3. Configure environment variables
 
-Copy `.env.example` to `.env.local`.
-
-```powershell
-Copy-Item .env.example .env.local
-```
-
-Add the required credentials:
+Create a `.env.local` file in the project root and add your credentials:
 
 ```env
 MONGODB_URI=your_mongodb_connection_string
@@ -61,104 +55,44 @@ GITHUB_CLIENT_ID=your_github_client_id
 GITHUB_CLIENT_SECRET=your_github_client_secret
 ```
 
-Local OAuth callback URLs:
+Replace the placeholder values with your own credentials. Configure the corresponding OAuth callback URLs in Google Cloud Console and GitHub Developer Settings.
 
-```text
-Google: http://localhost:3000/api/auth/callback/google
-GitHub: http://localhost:3000/api/auth/callback/github
-```
+**Security:** Never commit `.env.local` or expose your secret keys.
 
-Never commit `.env.local` or share its values.
-
-### 4. Start the project
+### 4. Run the development server
 
 ```bash
 npm run dev
 ```
 
-Open http://localhost:3000 in a browser.
+Open http://localhost:3000 in your browser.
 
-## Features
+## 📡 Product API
 
-- Today's price increase and decrease sections
-- Complete product list with responsive cards
-- Category filtering and numerical price sorting
-- Dynamic product details pages
-- Minimum, maximum, average, and market-based prices
-- Protected product and profile routes
-- Email and password authentication
-- Google and GitHub social login
-- Profile information and user-name update
-- Loading skeletons and toast notifications
-- Friendly 404 and empty states
-- Responsive navigation and price ticker
-- Automatic backup API support
+BazarDor uses product APIs with fallback support to improve data availability.
 
-## Technologies
+The configured API sources are:
 
-- Next.js 16
-- React 19
-- TypeScript
-- Tailwind CSS
-- Better Auth
-- MongoDB
-- React Hot Toast
-- Lucide React
-- Vercel
+1. https://api.api-store.workers.dev/api/bazardor
+2. https://api.abcz.workers.dev/api/bazardor
+3. https://api-store-indol.vercel.app/api/bazardor
+4. https://openapi.programming-hero.com/api/bazardor
 
-## API Information
+The application attempts the next configured source when an API request fails or returns an unsuccessful or invalid response.
 
-The application uses four API sources in the following fallback order:
+## 📂 Main Routes
 
-**1. Primary API**
+| Route | Description |
+|---|---|
+| `/` | Homepage and product listings |
+| `/category/[slug]` | Products by category |
+| `/product/[slug]` | Product details |
+| `/signin` | User sign-in |
+| `/signup` | User registration |
+| `/profile` | User profile |
+| `/profile/update` | Update profile information |
 
-```text
-https://api.api-store.workers.dev/api/bazardor
-```
-
-**2. Secondary API**
-
-```text
-https://api.abcz.workers.dev/api/bazardor
-```
-
-**3. Third API**
-
-```text
-https://api-store-indol.vercel.app/api/bazardor
-```
-
-**4. Fourth API**
-
-```text
-https://openapi.programming-hero.com/api/bazardor
-```
-
-If an API has a network error, returns an unsuccessful response, or sends invalid JSON, the application automatically tries the next API in the list.
-
-Available endpoints:
-
-```text
-/products
-/products?category=chal
-/products/1
-/categories
-/categories/chal
-```
-
-## Main Routes
-
-| Route              | Description                                   |
-| ------------------ | --------------------------------------------- |
-| `/`                | Homepage with price sections and all products |
-| `/category/[slug]` | Category products with sorting                |
-| `/product/[slug]`  | Protected product details                     |
-| `/signin`          | User sign-in                                  |
-| `/signup`          | User registration                             |
-| `/profile`         | Protected user profile                        |
-| `/profile/update`  | Update the user's name                        |
-
-## Available Commands
+## 📜 Available Scripts
 
 ```bash
 npm run dev
@@ -167,8 +101,16 @@ npm run build
 npm run start
 ```
 
-## Deployment Notes
+## 🚀 Deployment
 
-For Vercel deployment, add all values from `.env.example` in the project Environment Variables settings. MongoDB Atlas must allow the deployed application to connect. The production domain and OAuth callback URLs must match exactly.
+The project is deployed on Vercel. To deploy your own instance:
 
-For Cloudflare, use the full-stack Next.js Workers or OpenNext runtime. This project is not a static export because it uses route handlers, MongoDB, and server-side authentication.
+1. Import the repository into Vercel.
+2. Configure the required environment variables.
+3. Set up MongoDB Atlas access.
+4. Configure the production authentication URL and OAuth callback URLs.
+5. Deploy the application.
+
+## 📄 License
+
+Add your preferred license here if you intend to distribute the project publicly.
