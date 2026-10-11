@@ -6,7 +6,7 @@ My BazarDorDaily project is a responsive web application for checking the daily 
 
 I deployed the production website on Vercel.
 
-- Live site: https://bazardors.vercel.app
+- Live site: https://bazardorbdaily.vercel.app
 - GitHub repository: https://github.com/bdshroud/bazardordaily
 
 ### Live Authentication Setup
@@ -14,14 +14,14 @@ I deployed the production website on Vercel.
 The production environment variables are stored securely in Vercel. The production base URL is:
 
 ```text
-BETTER_AUTH_URL=https://bazardors.vercel.app
+BETTER_AUTH_URL=https://bazardorbdaily.vercel.app
 ```
 
 Production OAuth callback URLs:
 
 ```text
-Google: https://bazardors.vercel.app/api/auth/callback/google
-GitHub: https://bazardors.vercel.app/api/auth/callback/github
+Google: https://bazardorbdaily.vercel.app/api/auth/callback/google
+GitHub: https://bazardorbdaily.vercel.app/api/auth/callback/github
 ```
 
 These callback URLs must also be added to Google Cloud Console and GitHub Developer Settings.
