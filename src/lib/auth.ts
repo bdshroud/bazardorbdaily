@@ -1,35 +1,55 @@
+
 import { betterAuth } from "better-auth/minimal";
 import { mongodbAdapter } from "better-auth/adapters/mongodb";
 import { db } from "./mongodb";
 
 const isProduction = process.env.NODE_ENV === "production";
-const productionURL = "https://bazardorbdaily.vercel.app/";
+
+const productionURL = "https://bazardorbdaily.vercel.app";
+
 const baseURL =
-  process.env.BETTER_AUTH_URL ??
+  process.env.BETTER_AUTH_URL ||
   (isProduction ? productionURL : "http://localhost:3000");
 
 export const auth = betterAuth({
-  database: mongodbAdapter(db, { transaction: false }),
+  database: mongodbAdapter(db, {
+    transaction: false,
+  }),
+
   baseURL,
-  account: {
-    // Keep OAuth state encrypted in a short-lived browser cookie. This avoids
-    // state records being lost between Vercel serverless instances.
-    storeStateStrategy: "cookie",
+
+  emailAndPassword: {
+    enabled: true,
+    autoSignIn: false,
   },
+
+  account: {
+    // Store OAuth state in a short-lived cookie.
+    storeStateStrategy: "cookie",
+
+    // Allow linking trusted OAuth providers to existing accounts.
+    accountLinking: {
+      enabled: true,
+      trustedProviders: ["google", "github"],
+    },
+  },
+
   advanced: {
     useSecureCookies: isProduction,
   },
-  emailAndPassword: { enabled: true, autoSignIn: false },
+
   socialProviders: {
     google: {
       clientId: process.env.GOOGLE_CLIENT_ID ?? "",
       clientSecret: process.env.GOOGLE_CLIENT_SECRET ?? "",
     },
+
     github: {
       clientId: process.env.GITHUB_CLIENT_ID ?? "",
       clientSecret: process.env.GITHUB_CLIENT_SECRET ?? "",
     },
   },
+
   trustedOrigins: [
     baseURL,
     productionURL,
