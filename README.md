@@ -1,13 +1,13 @@
-# বাজার দর (BazarDor)
+# BazarDorDaily
 
-My BazarDor project is a responsive web application for checking the daily prices of essential products in Bangladesh. It helps users browse products, compare price changes, and view prices from different markets.
+My BazarDorDaily project is a responsive web application for checking the daily prices of essential products in Bangladesh. It helps users browse products, compare price changes, and view prices from different markets.
 
 ## My Live Project
 
 I deployed the production website on Vercel.
 
 - Live site: https://bazardors.vercel.app
-- GitHub repository: https://github.com/kamrullab/Assignment-7
+- GitHub repository: https://github.com/bdshroud/bazardordaily
 
 ### Live Authentication Setup
 
@@ -31,8 +31,8 @@ These callback URLs must also be added to Google Cloud Console and GitHub Develo
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/kamrullab/Assignment-7.git
-cd Assignment-7
+git clone https://github.com/bdshroud/bazardordaily.git
+cd bazardordaily
 ```
 
 ### 2. Install dependencies
@@ -172,7 +172,3 @@ npm run start
 For Vercel deployment, add all values from `.env.example` in the project Environment Variables settings. MongoDB Atlas must allow the deployed application to connect. The production domain and OAuth callback URLs must match exactly.
 
 For Cloudflare, use the full-stack Next.js Workers or OpenNext runtime. This project is not a static export because it uses route handlers, MongoDB, and server-side authentication.
-
-## Author
-
-Kamrul: https://github.com/kamrullab
