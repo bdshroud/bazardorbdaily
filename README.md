@@ -7,7 +7,7 @@ My BazarDorDaily project is a responsive web application for checking the daily 
 I deployed the production website on Vercel.
 
 - Live site: https://bazardorbdaily.vercel.app
-- GitHub repository: https://github.com/bdshroud/bazardordaily
+- GitHub repository: https://github.com/bdshroud/bazardorbdaily
 
 ### Live Authentication Setup
 
