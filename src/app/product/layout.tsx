@@ -3,7 +3,7 @@ import { redirect } from "next/navigation";
 import { auth } from "@/lib/auth";
 import { ensureMongoConnection } from "@/lib/mongodb";
 
-export const dynamic = "force-dynamic";
+
 export default async function ProductLayout({
   children,
 }: {
