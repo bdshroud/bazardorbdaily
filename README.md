@@ -14,7 +14,7 @@ I deployed the production website on Vercel.
 The production environment variables are stored securely in Vercel. The production base URL is:
 
 ```text
-BETTER_AUTH_URL=https://bazardorbdaily.vercel.app
+BETTER_AUTH_URL=https://bazardorbdaily.vercel.app/
 ```
 
 Production OAuth callback URLs:
